@@ -1,11 +1,12 @@
 import { useState } from "react";
 import logo from "../imgs/logo.png";
-import { Link } from "react-router-dom";
+import { Link,Outlet } from "react-router-dom";
 
 const Navbar = () => {
   const [searchBoxVisibility, setSearchBoxVisibility] = useState(false);
 
   return (
+    <>
     <nav className="navbar">
       <Link to="/" className="flex-none w-10">
         <img src={logo} alt="" className="w-full" />
@@ -42,6 +43,8 @@ const Navbar = () => {
         <Link className="btn-light py-2 hidden md:block" to="/signup">Sign Up</Link>
       </div>
     </nav>
+    <Outlet/>
+    </>
   );
 };
 
